@@ -41,3 +41,8 @@ menuLinks.forEach((link) => {
 
   topMenuEl.appendChild(linkEl); // Add the link to the top menu
 });
+
+// ============== 316.3.1 ============
+
+// ============== Part 1 =============
+/* Reviewed preivious code and see if anything would like to be changed. Since everything in the code is to my liking we continue */
