@@ -23,3 +23,21 @@ topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
 
 // Add a "flex-around" class to space items evenly
 topMenuEl.classList.add("flex-around");
+
+// ============ Part 3 =====================
+// This is our menu data
+var menuLinks = [
+  { text: "about", href: "/about" },
+  { text: "catalog", href: "/catalog" },
+  { text: "orders", href: "/orders" },
+  { text: "account", href: "/account" },
+];
+
+// Loop over each link in menuLinks
+menuLinks.forEach((link) => {
+  const linkEl = document.createElement("a"); // Create a new link
+  linkEl.href = link.href; // Set the link's URL
+  linkEl.textContent = link.text; // Set the link's text
+
+  topMenuEl.appendChild(linkEl); // Add the link to the top menu
+});
