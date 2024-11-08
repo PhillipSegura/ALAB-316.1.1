@@ -24,6 +24,24 @@ topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
 // Add a "flex-around" class to space items evenly
 topMenuEl.classList.add("flex-around");
 
+// Select Element Variable
+const subMenuEl = document.getElementById("sub-menu");
+
+// Select the height Variable
+subMenuEl.style.height = "100%";
+
+// Set background color for Variable
+subMenuEl.style.backgroundColor = "var(--sub-menu-bg)";
+
+// Add flex-around to the Variable
+subMenuEl.classList.add("flex-around");
+
+// Set the CSS position subMenuEl
+subMenuEl.style.position = "absolute";
+
+// Zero out top property
+subMenuEl.style.top = "0";
+
 // ============ Part 3 =====================
 // This is our menu data
 var menuLinks = [
@@ -46,3 +64,8 @@ menuLinks.forEach((link) => {
 
 // ============== Part 1 =============
 /* Reviewed preivious code and see if anything would like to be changed. Since everything in the code is to my liking we continue */
+
+// ============ Part 2 ================
+/* Added given code into both index.html and styles.css. */
+
+// ============ Part 3 =================
