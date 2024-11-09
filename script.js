@@ -1,4 +1,3 @@
-// ============ Part 3 =====================
 // This is our menu data
 var menuLinks = [
   { text: "about", href: "/about" },
@@ -30,8 +29,6 @@ var menuLinks = [
   },
 ];
 
-// ============== Part 1 ===================
-
 // Select the main element
 const mainEl = document.querySelector("main");
 
@@ -44,7 +41,7 @@ mainEl.appendChild(h1);
 //Give the mainEL a flex centered layout by adding the flex class
 mainEl.classList.add("flex-ctr");
 
-// ============= Part 2 =======================
+//Setting and establishing the top menu elements
 // Grab the top menu <nav> element
 const topMenuEl = document.getElementById("top-menu");
 
@@ -87,17 +84,17 @@ subMenuEl.style.top = "0";
 const topMenuLinks = topMenuEl.querySelectorAll("a");
 console.log(topMenuLinks);
 
-// 2.  Attach a delegated 'click' event listener to topMenuEl.
+// Delegated and attached 'click' event listener to topMenuEl.
 topMenuEl.addEventListener("click", aHandler);
 
 // The first line of code of the event listener function should call the event
 // object's preventDefault() method.
 function aHandler(event) {
   if (event.target.localName !== "a") {
-    return; // The second line of code of the function should immediately return if the element clicked was not an <a> element.
+    return;
   } else {
     event.preventDefault();
-    console.log(event.target.textContent); // Log the content of the <a> to verify the handler is working.
+    console.log(event.target.textContent);
   }
 }
 
@@ -111,19 +108,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!e.target.matches("a")) return;
       //e.target targets a tag
       console.log(e.target);
-      // 1.  The event listener should add the active class to the <a> element that was clicked, unless it was
+      //  The event listener should add the active class to the <a> element that was clicked, unless it was
       // already active, in which case it should remove it.
-      e.target.classList.toggle("active"); //Toggle
+      e.target.classList.toggle("active");
       topMenuLinks.forEach((link) => {
         console.log(link.subLinks);
         if (link !== e.target) {
           link.classList.remove("active"); // 2.  The event listener should remove the active class from each other <a> element
           // in topMenuLinks - whether the active class exists or not.
         }
-        //1. Within the event listener, if the clicked <a> element does not yet have a class of "active" (it was inactive when clicked):
-        // a. If the clicked <a> element's "link" object within menuLinks has a subLinks property (all do, except for the "link" object for
-        // ABOUT), set the CSS top property of subMenuEl to 100%.
-        // b.Otherwise, set the CSS top property of subMenuEl to 0.
         const clickedLink = menuLinks.find(
           (link) => link.text == e.target.textContent
         );
@@ -140,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       function buildSubMenu(subLinks) {
         console.log(subLinks);
+
         // const subMenuEl = document.querySelectorAll("sub-menu")
         console.log(subMenuEl);
         // 1. Clear the current contents of subMenuEl.
